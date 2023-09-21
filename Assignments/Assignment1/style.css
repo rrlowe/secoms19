@@ -1,0 +1,69 @@
+
+  /*
+   * navbar CSS
+   */
+
+  .navbar{
+    background-color: rgb(96, 24, 95);
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  /*
+   * display content dynamically to fill page
+   */
+  
+  .flex-equal > * {
+    flex: 1;
+  }
+  @media (min-width: 768px) {
+    .flex-md-equal > * {
+      flex: 1;
+    }
+  }
+    /*
+   * CSS for about page
+   */
+  
+  .aboutHeading{
+    text-align: center;
+    color: black;
+    margin: 10px;
+    border: black solid 3px;
+    padding: 40px;
+  }
+  .dev{
+    padding-left: 10vw;
+  }
+
+  .aboutBody{
+    background-color:  rgb(96, 24, 95);
+    color:white;
+    margin: 10px;
+    padding: 30px;
+  }
+
+  .student{
+    padding-left: 20vw;
+    text-align: left;
+  }
+  .student p a{
+    color: white;
+    padding-left: 30px;
+  }
+  .cookies{
+    border: black solid 3px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .aboutfooter{
+    margin: 10px;
+    background-color: rgb(96, 24, 95);
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.551);
+    fill: currentColor;
+  }
