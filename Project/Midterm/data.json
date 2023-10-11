@@ -2,27 +2,33 @@
     "product": [
         {
             "type": "ChocolateChip",
-            "image": ".\\images\\singlePackagedChocolateChipCookie.jpeg"
+            "image": ".\\images\\singlePackagedChocolateChipCookie.jpeg",
+            "price": "$29.00"
         },
         {
             "type": "Sugar",
-            "image": ".\\images\\singlePackageSugarCookie"
+            "image": ".\\images\\singlePackageSugarCookie",
+            "price": "$28.00"
         },
         {
             "type": "Snickerdoodle",
-            "image": ".\\images\\singlePackagedSnickerdoodleCookie.jpeg"
+            "image": ".\\images\\singlePackagedSnickerdoodleCookie.jpeg",
+            "price": "$28.00"
         },
         {
             "type": "Monster",
-            "image": ".\\images\\singlePackagedMonsterCookie.jpeg"
+            "image": ".\\images\\singlePackagedMonsterCookie.jpeg",
+            "price": "$36.00"
         },
         {
             "type": "BananaBread",
-            "image": ".\\images\\BananaBread.jpeg"
+            "image": ".\\images\\BananaBread.jpeg",
+            "price": "$18.00"
         },
         {
             "type": "VarietyBox",
-            "image": ".\\images\\varietyBox.jpeg"
+            "image": ".\\images\\varietyBox.jpeg",
+            "price": "$30.00"
         }
     ]
 }
