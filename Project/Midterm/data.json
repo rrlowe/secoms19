@@ -1,0 +1,28 @@
+{
+    "product": [
+        {
+            "type": "ChocolateChip",
+            "image": ".\\images\\singlePackagedChocolateChipCookie.jpeg"
+        },
+        {
+            "type": "Sugar",
+            "image": ".\\images\\singlePackageSugarCookie"
+        },
+        {
+            "type": "Snickerdoodle",
+            "image": ".\\images\\singlePackagedSnickerdoodleCookie.jpeg"
+        },
+        {
+            "type": "Monster",
+            "image": ".\\images\\singlePackagedMonsterCookie.jpeg"
+        },
+        {
+            "type": "BananaBread",
+            "image": ".\\images\\BananaBread.jpeg"
+        },
+        {
+            "type": "VarietyBox",
+            "image": ".\\images\\varietyBox.jpeg"
+        }
+    ]
+}
