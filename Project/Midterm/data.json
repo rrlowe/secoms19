@@ -1,34 +1,72 @@
 {
-    "product": [
+    "Dozen": [
         {
-            "type": "ChocolateChip",
-            "image": ".\\images\\singlePackagedChocolateChipCookie.jpeg",
+            "type": "ChocolateChipDozen",
+            "image": ".\\images\\stackOfCookies.jpeg",
+            "lable":"Classic Chocolate Chip Cookie DOZEN",
+            "text":"Our irresistible treats are made with a perfect blend of premium ingredients, including rich semi-sweet chocolate chips, buttery dough, and a touch of vanilla for that classic, melt-in-your-mouth goodness. Each bite is a harmonious balance of sweet and savory, creating a satisfying and comforting experience that's perfect for any occasion. ",
             "price": "$29.00"
         },
         {
-            "type": "Sugar",
-            "image": ".\\images\\singlePackageSugarCookie",
+            "type": "SugarDozen",
+            "image": ".\\images\\multipackageSugarCookie.jpeg",
+            "lable":"Sugar Cookies DOZEN",
+            "text":" These delicious treats are baked to perfection, featuring a delicate balance of buttery goodness and a hint of vanilla. Perfectly soft and chewy with a delightful sugary crunch, our Sugar Cookies are a timeless favorite for any occasion.",
             "price": "$28.00"
         },
         {
-            "type": "Snickerdoodle",
-            "image": ".\\images\\singlePackagedSnickerdoodleCookie.jpeg",
+            "type": "SnickerdoodleDozen",
+            "image": ".\\images\\multipackageSnickerdoodle.jpeg",
+            "lable":"Snickerdoodle DOZEN",
+            "text":"Indulge in the timeless delight of our Snickerdoodle Cookie. Soft and chewy, with a perfect balance of cinnamon and sugar, this classic treat will transport your taste buds to a world of sweet nostalgia.",
             "price": "$28.00"
         },
         {
-            "type": "Monster",
+            "type": "MonsterDozen",
             "image": ".\\images\\singlePackagedMonsterCookie.jpeg",
+            "lable":"Monster Cookies DOZEN",
+            "text":"Amero Monster Cookies are oversized, chewy, and loaded with a variety of mix-ins that create a monster-sized explosion of flavor. These cookies are a beloved treat for those who crave a combination of sweet, savory, and indulgent flavors in a single bite.",
             "price": "$36.00"
         },
         {
             "type": "BananaBread",
             "image": ".\\images\\BananaBread.jpeg",
+            "lable":"Banana Bread Loaf",
+            "text":"Baked to perfection with a hint of warm cinnamon, our banana bread is the ultimate comfort food for any time of day. Enjoy it as a satisfying breakfast, a delightful afternoon snack, or a sweet ending to your meal. ",
             "price": "$18.00"
         },
         {
             "type": "VarietyBox",
             "image": ".\\images\\varietyBox.jpeg",
+            "lable":"Variety Cookie Box",
+            "text":"This assortment includes the all-time classic Chocolate Chip Cookies, bursting with gooey chocolate chips; our irresistible Monster Cookies, packed with a medley of colorful M&M's and oats; the tender and sweet Sugar Cookies, perfect for any occasion; and the cinnamon-kissed Snickerdoodle Cookies, with their signature crackled tops.",
             "price": "$30.00"
+        }
+    ],
+    "sixPack": [
+        {
+            "type": "ChocolateChip6pack",
+            "image": ".\\images\\singlePackagedChocolateChipCookie.jpeg",
+            "text":"Our irresistible treats are made with a perfect blend of premium ingredients, including rich semi-sweet chocolate chips, buttery dough, and a touch of vanilla for that classic, melt-in-your-mouth goodness. Each bite is a harmonious balance of sweet and savory, creating a satisfying and comforting experience that's perfect for any occasion. ",
+            "price": "$15.00"
+        },
+        {
+            "type": "Sugar6pack",
+            "image": ".\\images\\singlePackageSugarCookie",
+            "text":" These delicious treats are baked to perfection, featuring a delicate balance of buttery goodness and a hint of vanilla. Perfectly soft and chewy with a delightful sugary crunch, our Sugar Cookies are a timeless favorite for any occasion.",
+            "price": "$14.00"
+        },
+        {
+            "type": "Snickerdoodle6pack",
+            "image": ".\\images\\singlePackagedSnickerdoodleCookie.jpeg",
+            "text":"Indulge in the timeless delight of our Snickerdoodle Cookie. Soft and chewy, with a perfect balance of cinnamon and sugar, this classic treat will transport your taste buds to a world of sweet nostalgia.",
+            "price": "$14.00"
+        },
+        {
+            "type": "Monster6pack",
+            "image": ".\\images\\singlePackagedMonsterCookie.jpeg",
+            "text":"Amero Monster Cookies are oversized, chewy, and loaded with a variety of mix-ins that create a monster-sized explosion of flavor. These cookies are a beloved treat for those who crave a combination of sweet, savory, and indulgent flavors in a single bite.",
+            "price": "$18.00"
         }
     ]
 }
