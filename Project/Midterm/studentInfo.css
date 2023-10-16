@@ -25,3 +25,11 @@
     padding-left: 20vw;
     text-align: left;
   }
+
+  .nav-link{
+    padding-left: 30px;
+    border-radius: 20px;
+  }
+  .nav-link:hover{
+    background-color: #ffffff;
+  }

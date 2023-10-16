@@ -24,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto" style="margin-right: 50px;">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#"><u>Home</u></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./about.html">About</a>
@@ -46,15 +46,22 @@
     <img style="display: block; margin: 30px; margin-left: auto; margin-right: auto;" width="40%"
       src="./characters/classicWhiteBG.jpeg" />
 
-    <div style="background-color: pink; display: flex; justify-content: space-evenly; background-image: url(./images/varietyOfCookiesAndMilk.jpeg); background-size: 40%; background-repeat: no-repeat; background-position: 50%; height: 60vw;">
-      <p style="background-color: whitesmoke; border-radius: 30px; margin-bottom: auto;text-align: center; margin-left: 30px; margin-top: 30px; color: #090503ff; font-size: 5vw; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Enjoy our locally made baked goods</p>
+    <div
+      style="background-color: pink; display: flex; justify-content: space-evenly; background-image: url(./images/varietyOfCookiesAndMilk.jpeg); background-size: 40%; background-repeat: no-repeat; background-position: 50%; height: 60vw;">
+      <p
+        style="background-color: whitesmoke; border-radius: 30px; margin-bottom: auto;text-align: center; margin-left: 30px; margin-top: 30px; color: #090503ff; font-size: 5vw; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        Enjoy our locally made baked goods</p>
       <img style="border-radius: 50% 10%; margin: 30px;" width="40%" src="" />
-      <p style="background-color: whitesmoke; border-radius: 30px; margin-top: auto; margin-bottom: 30px; margin-right: 30px; padding: 10px; text-align: center; color: #090503ff; font-size: 5vw; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Guaranteed fresh</p>
+      <p
+        style="background-color: whitesmoke; border-radius: 30px; margin-top: auto; margin-bottom: 30px; margin-right: 30px; padding: 10px; text-align: center; color: #090503ff; font-size: 5vw; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        Guaranteed fresh</p>
 
     </div>
 
-    <div style="background-color: pink;">   
-      <div style="margin-right: auto; margin-left: auto; width: 70%; height:10px; background-color: rgb(255, 255, 255); border-radius: 10px;"></div>   
+    <div style="background-color: pink;">
+      <div
+        style="margin-right: auto; margin-left: auto; width: 70%; height:10px; background-color: rgb(255, 255, 255); border-radius: 10px;">
+      </div>
       <div style="display: flex; flex-wrap: wrap; align-items: stretch;">
         <img style="margin: auto;" width="25%" src="./characters/coffeeBearNoBG.png" />
         <form id="contactForm" style="text-align:  center; margin: auto; padding-bottom: 30px;">
@@ -63,7 +70,7 @@
           <input class="contactInput" style="padding: 10px;" type="text" name="email" placeholder="Name"> <br>
           <input class="contactInput" style="padding: 10px;" type="text" name="email" placeholder="Email"><br>
           <input class="contactInput" style="padding: 10px;" type="text" name="email" placeholder="Phone"><br>
-          <textarea class="contactInput"  style="padding: 10px;" rows="10" placeholder="Message"></textarea><br>
+          <textarea class="contactInput" style="padding: 10px;" rows="10" placeholder="Message"></textarea><br>
           <button class="submit" type="button" onclick="clearInput()">Submit</button>
         </form>
         <img style="margin: auto;" width="25%" src="./characters/greenShirtBearNoBG.png" />
@@ -107,10 +114,10 @@
 <script>
   function clearInput(element) {
     let input = document.getElementsByClassName("contactInput")
-    for(var i =0; i < input.length; i++){
+    for (var i = 0; i < input.length; i++) {
       input[i].value = "";
     }
-  
+
   }
 </script>
 
@@ -127,6 +134,15 @@
     width: 300px;
     height: 150px;
     border: none;
+  }
+
+  .nav-link {
+    padding-left: 30px;
+    border-radius: 20px;
+  }
+
+  .nav-link:hover {
+    background-color: #ffffff;
   }
 
   .submit {
