@@ -47,24 +47,28 @@
         {
             "type": "ChocolateChip6pack",
             "image": ".\\images\\singlePackagedChocolateChipCookie.jpeg",
+            "lable": "Classic Chocolate Chip Cookie SIX-PACK",
             "text":"Our irresistible treats are made with a perfect blend of premium ingredients, including rich semi-sweet chocolate chips, buttery dough, and a touch of vanilla for that classic, melt-in-your-mouth goodness. Each bite is a harmonious balance of sweet and savory, creating a satisfying and comforting experience that's perfect for any occasion. ",
             "price": "$15.00"
         },
         {
             "type": "Sugar6pack",
-            "image": ".\\images\\singlePackageSugarCookie",
+            "image": ".\\images\\singlePackagedSugarCookie.jpeg",
+            "lable": "Sugar Cookies SIX-PACK",
             "text":" These delicious treats are baked to perfection, featuring a delicate balance of buttery goodness and a hint of vanilla. Perfectly soft and chewy with a delightful sugary crunch, our Sugar Cookies are a timeless favorite for any occasion.",
             "price": "$14.00"
         },
         {
             "type": "Snickerdoodle6pack",
             "image": ".\\images\\singlePackagedSnickerdoodleCookie.jpeg",
+            "lable": "Snickerdoodle SIX-PACK",
             "text":"Indulge in the timeless delight of our Snickerdoodle Cookie. Soft and chewy, with a perfect balance of cinnamon and sugar, this classic treat will transport your taste buds to a world of sweet nostalgia.",
             "price": "$14.00"
         },
         {
             "type": "Monster6pack",
             "image": ".\\images\\singlePackagedMonsterCookie.jpeg",
+            "lable": "Monster Cookies SIX-PACK",
             "text":"Amero Monster Cookies are oversized, chewy, and loaded with a variety of mix-ins that create a monster-sized explosion of flavor. These cookies are a beloved treat for those who crave a combination of sweet, savory, and indulgent flavors in a single bite.",
             "price": "$18.00"
         }

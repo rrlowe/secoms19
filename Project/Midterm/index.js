@@ -18,3 +18,20 @@ function loadProducts(product){
     }
 }
 }
+
+if(document.URL.includes("productPage2")){
+    function loadProducts(product){
+        var productContainer = document.getElementById("products");
+    
+        for(var i =0; i< product.Dozen.length; i++){
+            let image = product.sixPack[i].image; //key = movies
+            let lable = product.sixPack[i].lable;
+            let price = product.sixPack[i].price;
+    
+            let element = document.createElement("div");
+            element.innerHTML = `<div class="col"><div class="card shadow-sm" style="padding: 10px;"><img class="cookieImg" src="${image}"><div class="card-body"> <p class="card-text">${lable}<br> <span>${price}</span></p></div></div></div>`
+            productContainer.appendChild(element);
+    
+        }
+    }
+    }
