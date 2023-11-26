@@ -33,12 +33,12 @@ body {
 }
 
 .cards .card .card-content h1 {
-  font-size: 30px;
+  font-size: 20px;
 }
 
-.cards .card button {
+.cards .card .view-product {
   display: block;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
   padding: 10px;
@@ -47,20 +47,30 @@ body {
   font-weight: 600;
   background-color: white;
   font-size: 20px;
+  text-decoration: none;
+  text-align: center;
   border: 3px solid rgb(147, 119, 79);
 }
 
-.cards .card button:hover {
-  display: block;
-  margin-top: 50px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 10px;
-  border-radius: 20px;
-  color: white;
-  font-weight: 600;
-  background-color: rgb(147, 119, 79);
+.cards .card .add, .sub{
+  background-color: white;
   font-size: 20px;
+  border: 3px solid rgb(147, 119, 79);
+  color: rgb(147, 119, 79);
+  border-radius: 20px;
+  width: 40px;
+}
+.cards .card .add{
+  margin-left: 5px;
+}
+.add-sub{
+  margin-top: 20px;
+  margin-left: 22%;
+}
+
+.cards .card .view-product:hover, .cards .card .add:hover, .cards .card .sub:hover{
+  color: white;
+  background-color: rgb(147, 119, 79);
   border: 3px solid rgb(147, 119, 79);
 }
 
@@ -77,7 +87,7 @@ body {
 
 .orderSum .cart-list {
   display: grid;
-  width: 80vw;
+  width: 90vw;
 }
 
 .orderSum .cart-list .notlast {
@@ -92,7 +102,8 @@ body {
 
 .orderSum .cart-list article .card-content .info {
   float: left;
-  margin-left: 15vw;
+  margin-left: 13vw;
+  font-size: 1.5vw;
 }
 
 .orderSum .cart-list article .card-content .price {
@@ -119,6 +130,10 @@ body {
   border-radius: 20px;
   background-color: pink;
   width: auto;
+  color: black;
+  border: 2px solid black;
+  font-size: larger;
+  text-decoration: none;
 }
 
 .orderSum button {
@@ -135,6 +150,12 @@ body {
   width: 70vw;
   float: right;
   float: left;
+}
+
+.orderSum h1{
+  text-align: center;
+  padding-top:10vh;
+  padding-bottom: 52vh;
 }
 
 .search {
@@ -159,17 +180,48 @@ body {
   ;
 }
 
-.card .btn {
+.card .btn, .order-card .btn {
   background-color: pink;
   color: black;
   width: 40vw;
+  border: solid 2px black;
   margin-left: 30vw;
-  margin-bottom: 50vh;
+  margin-top: 50px;
+  margin-bottom: 35vw;
+}
+
+
+.card .btn:hover, .order-card .btn:hover {
+  background-color: white;
+  color: black;
+  width: 40vw;
+  border: solid 2px black;
 }
 
 .card-title {
   margin-top: 30px;
 }
+
+.row .img-fluid{
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.order-card{
+  width: 70vw;
+  margin-left: 15vw;
+}
+.order-card .order-price{
+  float: right;
+  margin-right: 5vw;
+
+}
+.order-card .order-data{
+  margin-left: 30%;
+  margin-top: 30px;
+}
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -211,6 +263,8 @@ footer {
   padding-left: 30px;
   padding-bottom: 70px;
   background-color: pink;
+  position: relative;
+  width: 100%;
 }
 footer a{
   float: left;

@@ -1,19 +1,38 @@
-import { React, useState } from "react";
+import { React, useState, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "./App.js";
 
 export function CheckoutForm() {
-  const [cart, setCart] = useState([]);
   const [order, setOrder] = useState({
     name: "",
     email: "",
     card: "",
     zip: "",
   });
+  const { cartContent, setCartContent } = useContext(CartContext);
   const [cartTotal, setCartTotal] = useState(0);
-  const [displayItems, setDisplayItems] = useState();
-  const [searchVal, setSearchVal] = useState("");
+  const [cart, setCart] = useState(cartContent)
   const [checkoutActive, setcheckoutActive] = useState(true);
   const [orderSumActive, setorderSumActive] = useState(false);
   let val;
+
+  useEffect(() => {
+    total();
+  }, cart);
+
+  function howManyofThis(id) {
+    let hmot = cart.filter((cartItem) => cartItem.id === id);
+    return hmot.length;
+  }
+
+  const total = () => {
+    let totalVal = 0;
+    for (let i = 0; i < cart.length; i++) {
+      totalVal += cart[i].price;
+    }
+    setCartTotal(totalVal);
+  };
+
 
   function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
@@ -63,7 +82,7 @@ export function CheckoutForm() {
     }
 
     if (val) {
-        setcheckoutActive((current) => !current);
+      setcheckoutActive((current) => !current);
       setorderSumActive((current) => !current);
     }
     return val;
@@ -79,25 +98,72 @@ export function CheckoutForm() {
     });
 
     return (
-      <div class="card">
+      <div class="order-card">
         <div class="card-body">
           <h5 class="card-title">Order summary</h5>
           <p class="card-text">Here is a summary of your order.</p>
-          {/* {cartItems} */}
+          {cartItems}
+          <div class="order-price">
+            <span class="small text-muted">Order total: </span>
+            <span class="lead fw-normal"> ${cartTotal}</span>
+          </div>
+          <div class="order-data">
           {orderList}
+          </div>
         </div>
 
-        <button class="btn">Return</button>
+        <Link class="btn" to="/products">
+          Return
+        </Link>
       </div>
     );
   };
 
+  const uniqueItems = cart.filter((val, id, array) => {
+    return array.indexOf(val) == id;
+  });
+
+  const listItems = uniqueItems.map((el) => (
+    // PRODUCT
+    <article key={el.id}>
+      <img src={el.image} />
+      <div class="card-content">
+        <p class="info">
+          ${el.price} <span class="close">&#10005;</span>
+          {howManyofThis(el.id)}
+        </p>
+        <p class="info">{el.title}</p>
+        <div class="price">${el.price * howManyofThis(el.id)}</div>
+      </div>
+    </article>
+  ));
+
+  const cartItems = uniqueItems.map((el) => (
+    <div key={el.id}>
+      <div class="row border-top border-bottom" key={el.id}>
+        <div class="row main align-items-center">
+          <div class="col-2">
+            <img class="img-fluid" src={el.image} />
+          </div>
+          <div class="col-4">
+            <div class="row text-muted">{el.title}</div>
+          </div>
+          <div class="col-2">
+            ${el.price} <span class="close">&#10005;</span>
+            {howManyofThis(el.id)}
+          </div>
+          <div class="col price">${el.price * howManyofThis(el.id)}</div>
+        </div>
+      </div>
+    </div>
+  ));
+
   const CheckoutForm = () => {
     return (
       <div class="orderSum">
-        <button class="btn-return" onClick={() => {}}>
+        <Link class="btn-return" to="/products">
           Continue Shopping
-        </button>
+        </Link>
         <legend></legend>
         <div class="col-md-8 cart">
           <div class="cart-list">
@@ -106,30 +172,13 @@ export function CheckoutForm() {
               <span class="notlast small text-muted">Quantity</span>
               <span class="last small text-muted">Price</span>
             </div>
-            <article>
-              <img src="../public/images/BananaBread.jpeg" />
-              <div class="card-content">
-                <p class="info">2</p>
-                <p class="info">item name</p>
-                <p class="price"> $23.00</p>
-              </div>
-            </article>
-            <article>
-              <img src="..\public\images\monsterCookiesAndMild.jpeg" />
-              <div class="card-content">
-                <p class="info">10</p>
-                <p class="info">item name</p>
-                <p class="price"> $23.00</p>
-              </div>
-            </article>
+            {listItems}
             <div class="order-price">
               <span class="small text-muted">Order total: </span>
-              <span class="lead fw-normal"> $50</span>
+              <span class="lead fw-normal"> ${cartTotal}</span>
             </div>
-          </div>
           <legend></legend>
         </div>
-
         <div class="row">
           <div class="col-2"></div>
 
@@ -281,6 +330,7 @@ export function CheckoutForm() {
                   onClick={(event) => {
                     event.preventDefault();
                     validate();
+                    setCartContent([])
                   }}
                 >
                   {" "}
@@ -291,12 +341,22 @@ export function CheckoutForm() {
           </div>
         </div>
       </div>
+      </div>
     );
   };
   return (
     <div>
-      <div class={`checkout ${checkoutActive ? "" : "collapse"}`}>
+      <div class={`checkout ${checkoutActive && cartContent.length > 0 ? "" : "collapse"}`}>
         <CheckoutForm />
+      </div>
+      <div class={`checkout ${checkoutActive && cartContent.length  == 0 ? "" : "collapse"}`}>
+      <div class="orderSum">
+        <Link class="btn-return" to="/products">
+          Continue Shopping
+        </Link>
+        <legend></legend>
+        <h1>Your Cart is currently Empty</h1>
+        </div>
       </div>
       <div class={`orderSummary ${orderSumActive ? "" : "collapse"}`}>
         <OrderSummary />

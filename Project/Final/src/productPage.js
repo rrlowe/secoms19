@@ -1,12 +1,36 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import {CartContext} from "./App.js"
+import { Link } from 'react-router-dom';
+
 
 export function ProductPage() {
   const[items, setItems] = useState([]);
   const [displayItems, setDisplayItems] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const {cartContent, setCartContent} = useContext(CartContext);
 
+  const addToCart = (el) => {
+    setCartContent([...cartContent, el]);
+    console.log(cartContent);
+  };
+
+  const removeFromCart = (el) => {
+    let hardCopy = [...cartContent];
+    let addBack = howManyofThis(el.id)-1
+    hardCopy = hardCopy.filter((cartItem) => cartItem.id !== el.id);
+    while(addBack > 0){
+      hardCopy = [...hardCopy, el]
+      addBack -= 1
+    }
+    setCartContent(hardCopy);
+  };
+
+  function howManyofThis(id) {
+    let hmot = cartContent.filter((cartItem) => cartItem.id === id);
+    return hmot.length;
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,7 +75,25 @@ export function ProductPage() {
       <div class="card-content">
         <h1>{el.title}</h1>
         <p>${el.price}.00</p>
-        <button>View Product</button>
+        <br></br>
+        <Link class="view-product" to={`/viewProduct/:${el.id}`} >View Product</Link>
+        <div class="add-sub">
+        <button
+           class="sub"
+            type="button"
+            variant="light"
+            onClick={() => removeFromCart(el)}
+          >
+            {" "}
+            -{" "}
+          </button>{" "}
+          ${el.price} <span class="close">&#10005;</span>
+          {howManyofThis(el.id)}
+          <button class="add" type="button" variant="light" onClick={() => addToCart(el)}>
+            {" "}
+            +{" "}
+          </button>
+          </div>
       </div>
     </article>
   ));
