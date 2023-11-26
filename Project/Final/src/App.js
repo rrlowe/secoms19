@@ -1,22 +1,19 @@
 import {NavBar} from './nav.js';
 import {ProductPage} from './productPage.js';
-import {React, createContext,useContext,useState } from "react";
+import {React,createContext,useState } from "react";
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import About from './About.js'; // Adjust the import path based on your project structure
-import Home from './Home.js';
 import{ProductDetails} from "./ProductDetails.js"
 import CheckoutForm from './checkoutForm.js';
 import Footer from './footer.js';
 import {About} from './About.js';
 import {Home} from './Home.js';
-import {ProductDetails} from './ProductDetails.js';
 import { StudentInfo } from './StudentInfo.js';
 
 export const CartContext = createContext([])
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cartContent, setCartContent] = useState([]);
     
   return (    
     <Router>
@@ -28,7 +25,6 @@ function App() {
           <Route path="/cart" element={<CheckoutForm />} />
           < Route path="/products" element={<ProductPage/>}/>
           <Route path="/viewProduct/:id" element={<ProductDetails />} /> 
-        <Route path="/cart" element={<Cart />} />
         <Route path="/studentInfo" element={<StudentInfo />} />
       </Routes>
       <legend></legend>
