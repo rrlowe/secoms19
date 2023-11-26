@@ -30,6 +30,34 @@ app.get("/AmeroBakery", async (req, res) => {
     res.send(results);
     });
 
+    app.get("/AmeroBakery/products/:productId", async (req, res) => {
+
+      await client.connect();
+      console.log("Node connected successfully to GET MongoDB");
+      const { productId } = req.params;
+      console.log('Product ID:', productId);
+      try {
+        // Query the database to get the product with the specified productId
+        const query = { id: parseInt(productId, 20) };
+        const product = await db.collection("cookies").findOne(query);
+
+        console.log('Product:', product);
+
+        if (!product) {
+          // If product is not found, send a 404 response
+          res.status(404).json({ error: 'Product not found' });
+        } else {
+          // If product is found, send the product data
+          res.json(product);
+        }
+      } catch (error) {
+        // Handle other errors
+        res.status(500).json({ error: 'Internal Server Error' });
+      }
+    });
+
+
+
 app.listen(port, () => {
   console.log("App listening at http://%s:%s", host, port);
 });
