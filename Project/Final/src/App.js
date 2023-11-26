@@ -3,7 +3,7 @@ import {ProductPage} from './productPage.js';
 import {React,createContext,useState } from "react";
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import{ProductDetails} from "./ProductDetails.js"
+import ProductDetails from "./ProductDetails.js"
 import CheckoutForm from './checkoutForm.js';
 import Footer from './footer.js';
 import {About} from './About.js';
@@ -24,7 +24,7 @@ function App() {
         <Route path="/about" element={<About />} />
           <Route path="/cart" element={<CheckoutForm />} />
           < Route path="/products" element={<ProductPage/>}/>
-          <Route path="/viewProduct/:id" element={<ProductDetails />} /> 
+          <Route path="/productDetails/:productId" element={<ProductDetails />} /> 
         <Route path="/studentInfo" element={<StudentInfo />} />
       </Routes>
       <legend></legend>

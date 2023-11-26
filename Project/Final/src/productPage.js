@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import React, { useState, useEffect, useContext } from "react";
 import {CartContext} from "./App.js"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export function ProductPage() {
@@ -10,6 +10,7 @@ export function ProductPage() {
   const [displayItems, setDisplayItems] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const {cartContent, setCartContent} = useContext(CartContext);
+  const navigate = useNavigate(); 
 
   const addToCart = (el) => {
     setCartContent([...cartContent, el]);
@@ -68,6 +69,10 @@ export function ProductPage() {
     filterItems();
   }, [searchTerm]);
 
+  const handleViewProduct = (productId) => {
+    navigate(`/productDetails/${productId}`);
+  };
+
   const listItems = displayItems.map((el) => (
     // PRODUCT
     <article class="card">
@@ -76,7 +81,14 @@ export function ProductPage() {
         <h1>{el.title}</h1>
         <p>${el.price}.00</p>
         <br></br>
-        <Link class="view-product" to={`/viewProduct/:${el.id}`} >View Product</Link>
+        {/* <Link class="view-product" to={`/viewProduct/${el.id}`} >View Product</Link>
+          */}
+          <button
+          class="view-product"
+          onClick={() => handleViewProduct(el.id)}
+        >
+          View Product
+        </button>
         <div class="add-sub">
         <button
            class="sub"

@@ -5,11 +5,14 @@ export function ProductDetails() {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
 
+  // console.log(productId);
+  console.log(product);
+
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8081/AmeroBakery/products/${productId}');
+        const response = await fetch(`http://localhost:8081/AmeroBakery/products/${productId}`);
         const result = await response.json();
         setProduct(result);
       } catch (error) {
@@ -28,7 +31,7 @@ export function ProductDetails() {
     <div className="row border-top border-bottom" key={productId}>
       <div className="row main align-items-center">
         <div className="col-2">
-          <img className="img-fluid" src={product.image} alt={product.title} />
+          <img src={product.image} alt={product.title} />
         </div>
         <div className="col">
           <div className="row text-muted">{product.title}</div>
@@ -39,4 +42,4 @@ export function ProductDetails() {
   );
 }
 
-// export default ProductDetails;
+export default ProductDetails;
