@@ -6,8 +6,8 @@ export function NavBar() {
     <div>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img alt="logo" src=".\images\characters\chefBearNoBG.png" width="50px" class="d-inline-block"></img> Amero Bakery</a>
+        <p class="navbar-brand" href="#">
+          <img alt="logo" src=".\images\characters\chefBearNoBG.png" width="50px" class="d-inline-block"></img> Amero Bakery</p>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,6 +24,9 @@ export function NavBar() {
             </li>
             <li class="nav-item productPage2">
               <a class="nav-link" to="/productPage2">Small Batch Cookies</a>
+            </li>
+            <li class="nav-item productPage2">
+              <a class="nav-link" to="/cart">Shoping Cart</a>
             </li>
             <li class="nav-item studentInfo">
               <a class="nav-link" to="/studentInfo">Student Info</a>

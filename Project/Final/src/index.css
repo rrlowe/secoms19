@@ -7,33 +7,214 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.cards .card {
+  margin: 20px;
+  border: 15px rgb(147, 119, 79);
+  border-style: double;
+  display: grid;
+  grid-template-rows: max-content 250px 1fr;
+  justify-items: center;
+  height: fit-content;
+}
+
+.cards .card .card-content {
+  width: 250px;
+}
+
+.cards .card .card-content p {
+  float: left;
+  margin-left: 20px;
+}
+
+.cards .card .card-content h1 {
+  font-size: 30px;
+}
+
+.cards .card button {
+  display: block;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+  border-radius: 20px;
+  color: rgb(147, 119, 79);
+  font-weight: 600;
+  background-color: white;
+  font-size: 20px;
+  border: 3px solid rgb(147, 119, 79);
+}
+
+.cards .card button:hover {
+  display: block;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  background-color: rgb(147, 119, 79);
+  font-size: 20px;
+  border: 3px solid rgb(147, 119, 79);
+}
+
+.card img {
+  margin-top: 20px;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.orderSum {
+  margin-top: 30px;
+}
+
+.orderSum .cart-list {
+  display: grid;
+  width: 80vw;
+}
+
+.orderSum .cart-list .notlast {
+  float: left;
+  margin-left: 15vw;
+}
+
+.orderSum .cart-list .last {
+  float: right;
+  margin-right: 5vw;
+}
+
+.orderSum .cart-list article .card-content .info {
+  float: left;
+  margin-left: 15vw;
+}
+
+.orderSum .cart-list article .card-content .price {
+  float: right;
+  margin-right: 5vw;
+}
+
+.orderSum .cart-list article img {
+  width: 50px;
+  height: auto;
+  float: left;
+  margin-left: 15vw;
+}
+
+.orderSum .cart-list .order-price {
+  margin-left: auto;
+  margin-right: 5vw;
+}
+
+.orderSum .btn-return {
+  float: left;
+  margin-left: 12vw;
+  padding: 8px;
+  border-radius: 20px;
+  background-color: pink;
+  width: auto;
+}
+
+.orderSum button {
+  background-color: pink;
+  width: 20vw;
+  padding: 5px;
+  border-radius: 20px;
+  font-size: larger;
+  margin-bottom: 30px;
+  float: right;
+}
+
+.orderSum .row {
+  width: 70vw;
+  float: right;
+  float: left;
+}
+
+.search {
+  color: black;
+  background-color: pink;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+.search label {
+  background-color: pink;
+  float: left;
+  margin-left: 20px;
+}
+
+.header {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border: 10px double rgb(147, 119, 79);
+  ;
+}
+
+.card .btn {
+  background-color: pink;
+  color: black;
+  width: 40vw;
+  margin-left: 30vw;
+  margin-bottom: 50vh;
+}
+
+.card-title {
+  margin-top: 30px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-nav{
+nav {
   background-color: pink;
 }
 
-.btn:focus{
+.btn:focus {
   box-shadow: none;
   outline: none;
   box-shadow: none;
   color: white;
   -webkit-box-shadow: none;
   -webkit-user-select: none;
-  transition: none; 
+  transition: none;
 }
-.btn:hover{
-  color: white;
-}
-a{
-  color: black; 
+
+a {
+  color: black;
   border-radius: 20px;
 }
-a:hover{
+
+a:hover {
   color: black;
   background-color: whitesmoke;
   text-decoration: none;
+}
+
+.navbar p {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  padding: 20px;
+  padding-left: 30px;
+  padding-bottom: 70px;
+  background-color: pink;
+}
+footer a{
+  float: left;
+}
+footer a:hover{
+  background-color: pink;
 }

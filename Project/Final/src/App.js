@@ -1,15 +1,19 @@
 import {NavBar} from './nav.js';
-import {Cart} from './cart.js';
-import React, { useState } from "react";
+import {ProductPage} from './productPage.js';
+import {React, useState } from "react";
 import './App.css';
+import CheckoutForm from './checkoutForm.js';
+import Footer from './footer.js';
 
-function App() {
-  const [cart, setCart] = useState([]);
-    
+function App() {    
+
   return (
     <div className="App">
         <NavBar></NavBar>
-        <Cart/>
+        <CheckoutForm/>
+        {/* <ProductPage/> */}
+        <legend></legend>
+        <Footer/>
     </div>
   );
 }
