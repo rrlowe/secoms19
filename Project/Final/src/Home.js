@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Home = () => {
+export function Home() {
 
     const [formData, setFormData] = useState({
         name: '',
@@ -182,4 +182,4 @@ const Home = () => {
     );
   };
   
-  export default Home;
+// export default Home;

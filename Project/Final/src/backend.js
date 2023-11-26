@@ -54,7 +54,7 @@ app.get("/AmeroBakery", async (req, res) => {
         // Handle other errors
         res.status(500).json({ error: 'Internal Server Error' });
       }
-    });
+  });
 
 
 
