@@ -26,6 +26,9 @@ export function NavBar() {
             <li className="nav-item">
               <Link className="nav-link" to="/cart">Cart</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/studentInfo">Student Info</Link>
+            </li>
           </ul>
         </div>
       </div>

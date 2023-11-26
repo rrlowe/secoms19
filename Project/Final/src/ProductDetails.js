@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 
-function ProductDetails() {
+export function ProductDetails() {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
 
+
   useEffect(() => {
-    // Fetch product details based on productId
-    axios.get(`/AmeroBakery/products/${productId}`)
-      .then(response => setProduct(response.data))
-      .catch(error => console.error(error));
-  }, [productId]);
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:8081/AmeroBakery/products/${productId}');
+        const result = await response.json();
+        setProduct(result);
+      } catch (error) {
+        console.error('Error fetching the API', error);
+      }
+    };
+    
+    fetchData();
+  }, []);
 
   if (!product) {
     return <p>Loading...</p>; // Add a loading indicator
@@ -32,4 +39,4 @@ function ProductDetails() {
   );
 }
 
-export default ProductDetails;
+// export default ProductDetails;

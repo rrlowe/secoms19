@@ -3,25 +3,24 @@ import {Cart} from './cart.js';
 import React, { useState } from "react";
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import About from './About.js'; // Adjust the import path based on your project structure
-import Home from './Home.js';
+import {About} from './About.js';
+import {Home} from './Home.js';
+import {ProductDetails} from './ProductDetails.js';
+import { StudentInfo } from './StudentInfo.js';
 
 
 function App() {
   const [cart, setCart] = useState([]);
     
-  return (
-    // <div className="App">
-        
-        // <Cart/>
-    
+  return (    
     <Router>
     <NavBar></NavBar>
       <Routes>
-        {/* Other routes */}
         <Route path="/" element={<Home />} /> 
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/details" element={<ProductDetails />} />
+        <Route path="/studentInfo" element={<StudentInfo />} />
       </Routes>
     </Router>
   );

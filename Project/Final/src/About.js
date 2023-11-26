@@ -1,6 +1,6 @@
 import React from "react";
 
-const AboutUs = () => {
+export function About() {
     const containerStyle = {
       display: 'block',
       marginLeft: 'auto',
@@ -36,7 +36,6 @@ const AboutUs = () => {
         </div>
         <h1 style={headingStyle}>About Us</h1>
         <p style={paragraphStyle}>
-          {/* ... Your content here ... */}
           Welcome to the sweet journey of Amero Bakery, where a passion for baking
             ignited in high school blossomed
             into a dream. Our story begins with a young and ambitious high schooler, Katelyn Lenz, whose love for baking
@@ -83,4 +82,4 @@ const AboutUs = () => {
     );
   };
   
-export default AboutUs;
+// export default AboutUs;
