@@ -7,7 +7,7 @@ export function StudentInfo() {
       <div className="aboutHeading">
         <h1 className="title">COM S 319: Construction of User Interfaces</h1>
         <p>Professor Abraham Netzahualcoy Aldaco Gastelum</p>
-        <p>September 23, 2023</p>
+        <p>November 28th, 2023</p>
       </div>
 
       <div className="aboutBody">
