@@ -221,6 +221,28 @@ body {
   margin-top: 30px;
 }
 
+.product-details img{
+  width: 50vw;
+  height: auto;
+  margin-left: 30px;
+}
+
+.product-details{
+  width: 95vw;
+  margin-top: 30px;
+  margin-bottom:41vmax;
+
+}
+
+.product-details .title{
+  font-size: 25px;
+  color: black;
+}
+.product-details .info{
+  font-size: 15px;
+  color: black;
+}
+
 
 
 code {

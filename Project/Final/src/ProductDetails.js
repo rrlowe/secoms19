@@ -28,14 +28,12 @@ export function ProductDetails() {
   }
 
   return (
-    <div className="row border-top border-bottom" key={productId}>
+    <div className="product-details" key={productId}>
       <div className="row main align-items-center">
-        <div className="col-2">
-          <img src={product.image} alt={product.title} />
-        </div>
+          <img src={"."+product.image} alt={product.title} />
         <div className="col">
-          <div className="row text-muted">{product.title}</div>
-          <div className="row">{product.text}</div>
+          <div className="title">{product.title}</div>
+          <div className="info">{product.text}</div>
         </div>
       </div>
     </div>
