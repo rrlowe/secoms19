@@ -12,7 +12,7 @@ function ShowOneItem() {
         <img src={el.image} width={30} alt="images" /> <br />
         <p>Category: {el.category} <br />
         Price: {el.price} <br />
-        Rating: {el.rating.rate}, By {el.rating.count} people</p>
+        Rating: {el.rating}</p>
         </div>
     </div>
 

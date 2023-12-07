@@ -1,118 +1,158 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function Put() {
-  // new Product
-  const [addNewProduct, setAddNewProduct] = useState({
+  const [editedProduct, setEditedProduct] = useState({
     id: 0,
     title: "",
     price: 0.0,
     description: "",
     category: "",
     image: "http://127.0.0.1:4000/images/",
-    rating: {count:0, rate:0.0}
+    rating: { count: 0, rate: 0.0 },
   });
 
   function handleChange(evt) {
-    const value = evt.target.value;
-    if (evt.target.name === "id") {
-      setAddNewProduct({ ...addNewProduct, id: value });
-    } else if (evt.target.name === "title") {
-      setAddNewProduct({ ...addNewProduct, title: value });
-    } else if (evt.target.name === "price") {
-      setAddNewProduct({ ...addNewProduct, price: value });
-    } else if (evt.target.name === "description") {
-      setAddNewProduct({ ...addNewProduct, description: value });
-    } else if (evt.target.name === "category") {
-      setAddNewProduct({ ...addNewProduct, category: value });
-    } else if (evt.target.name === "image") {
-      setAddNewProduct({ ...addNewProduct, image: value });
-    } else if (evt.target.name === "rating") {
-      setAddNewProduct({ ...addNewProduct, rating: value });
+    const { name, value } = evt.target;
+
+    if (name === "ratingCount" || name === "ratingRate") {
+      setEditedProduct((prevProduct) => ({
+        ...prevProduct,
+        rating: {
+          ...prevProduct.rating,
+          [name === "ratingCount" ? "count" : "rate"]: parseFloat(value),
+        },
+      }));
+    } else {
+      setEditedProduct((prevProduct) => ({
+        ...prevProduct,
+        [name]: name === "rating" ? parseFloat(value) : value,
+      }));
     }
+  }
+
+  function handleIdChange(evt) {
+    const productId = parseInt(evt.target.value, 10);
+    setEditedProduct((prevProduct) => ({ ...prevProduct, id: productId }));
   }
 
   function handleOnSubmit(e) {
     e.preventDefault();
-    console.log(e.target.value);
-    fetch("http://127.0.0.1:8081/fakestore/post", {
-      method: "POST",
+    const productId = editedProduct.id;
+    fetch(`http://127.0.0.1:8081/updateProduct/${productId}`, {
+      method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(addNewProduct),
+      body: JSON.stringify(editedProduct),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Post a new product completed");
+        console.log("Edit product completed");
         console.log(data);
         if (data) {
-          //const keys = Object.keys(data);
           const value = Object.values(data);
           alert(value);
         }
       });
   }
 
-
   return (
     <div>
-        <div className="newProductContent">
-          <h3 class="Heading">Add a new product :</h3>
-          <form action="">
+      <div className="editProductContent">
+        <h3 className="Heading">Edit Product:</h3>
+        <form onSubmit={handleOnSubmit}>
+          <label>
+            Product ID:
             <input
               type="number"
-              placeholder="id?"
+              placeholder="Enter Product ID"
               name="id"
-              value={addNewProduct.id}
-              onChange={handleChange}
+              value={editedProduct.id}
+              onChange={handleIdChange}
             />
+          </label>
+          <br />
+          <br />
+          <label>
+            Title:
             <input
               type="text"
-              placeholder="title?"
+              placeholder="Enter Title"
               name="title"
-              value={addNewProduct.title}
+              value={editedProduct.title}
               onChange={handleChange}
             />
+          </label>
+          <br />
+          <label>
+            Price:
             <input
               type="number"
-              placeholder="price?"
+              placeholder="Enter Price"
               name="price"
-              value={addNewProduct.price}
+              value={editedProduct.price}
               onChange={handleChange}
             />
+          </label>
+          <br />
+          <label>
+            Description:
             <input
               type="text"
-              placeholder="description?"
+              placeholder="Enter Description"
               name="description"
-              value={addNewProduct.description}
+              value={editedProduct.description}
               onChange={handleChange}
             />
+          </label>
+          <br />
+          <label>
+            Category:
             <input
               type="text"
-              placeholder="category?"
+              placeholder="Enter Category"
               name="category"
-              value={addNewProduct.category}
+              value={editedProduct.category}
               onChange={handleChange}
             />
+          </label>
+          <br />
+          <label>
+            Image:
             <input
               type="text"
-              placeholder="image?"
+              placeholder="Enter Image URL"
               name="image"
-              value={addNewProduct.image}
+              value={editedProduct.image}
               onChange={handleChange}
             />
+          </label>
+          <br />
+          <label>
+            Rating Count:
             <input
               type="number"
-              placeholder="rate?"
-              name="rating"
-              value={addNewProduct.rating}
+              placeholder="Enter Rating Count"
+              name="ratingCount"
+              value={editedProduct.rating.count}
               onChange={handleChange}
             />
-            <br></br>
-            <button type="submit" onClick={handleOnSubmit}>
-              submit
-            </button>
-          </form>
-        </div>
+          </label>
+          <br />
+          <label>
+            Rating Rate:
+            <input
+              type="number"
+              step="0.1"
+              placeholder="Enter Rating Rate"
+              name="ratingRate"
+              value={editedProduct.rating.rate}
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <button type="submit">Update</button>
+        </form>
       </div>
+    </div>
   );
 }
 

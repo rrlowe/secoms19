@@ -5,7 +5,6 @@ function App() {
   const [viewer4, setViewer4] = useState(false);
   const [checked4, setChecked4] = useState(false);
   const [index, setIndex] = useState(0);
-
   const [product, setProduct] = useState([]);
 
   
@@ -96,7 +95,7 @@ function App() {
                 Id:{product[index].id} <br />
                 Category: {product[index].category} <br />
                 Price: {product[index].price} <br />
-                Rating: {product[index].rating.count}, By {product[index].rating.rate} people</p>
+                Rating: {product[index].rating}</p>
                 </div>
             </div>
           )}

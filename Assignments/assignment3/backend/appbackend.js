@@ -105,9 +105,10 @@ app.delete("/deleteProduct", async (req, res) => {
 });
 
 // Route for update a post
-app.put("/updateProduct", async (req, res) => {
+app.put("/updateProduct/:productId", async (req, res) => {
   await client.connect();
   const { productId } = req.params;
+  console.log(productId);
   const {
     title,
     price,
@@ -120,7 +121,15 @@ app.put("/updateProduct", async (req, res) => {
   try {
     // Query the database to get the product with the specified productId
     const query = { id: parseInt(productId, 20) };
-    const product = await db.collection("product").findOne(query);
+    const product = await db.collection("products").findOne(query);
+
+    console.log(product);
+
+    if (!product) {
+      // If product is not found, send a 404 response
+      return res.status(404).json({ error: 'Product not found' });
+    }
+
     const update = {
       $set: {
         title,
@@ -132,18 +141,15 @@ app.put("/updateProduct", async (req, res) => {
       },
     };
     console.log('Product:', product);
-    const results = await db.collection("products").updateOne(product, update);
-    
-    if (!product) {
-      // If product is not found, send a 404 response
-      res.status(404).json({ error: 'Product not found' });
-    } else {
-      // If product is found, send the product data
-      res.json(product);
-    }
+    const results = await db.collection("products").updateOne(query, update);
+
+    // If the update is successful, send the updated product data
+    res.json({ success: true, updatedProduct: { ...product, ...update.$set } });
   } catch (error) {
     // Handle other errors
+    console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
+  } finally {
+    await client.close(); // Close the MongoDB connection
   }
-
 });
