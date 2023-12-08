@@ -1,14 +1,18 @@
-import {NavBar} from './nav.js';
-import {ProductPage} from './productPage.js';
+import {NavBar} from './nav.jsx';
+import {ProductPage} from './productPage.jsx';
 import {React,createContext,useState } from "react";
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ProductDetails from "./ProductDetails.js"
-import CheckoutForm from './checkoutForm.js';
-import Footer from './footer.js';
-import {About} from './About.js';
-import {Home} from './Home.js';
-import { StudentInfo } from './StudentInfo.js';
+import ProductDetails from "./ProductDetails.jsx"
+import CheckoutForm from './checkoutForm.jsx';
+import Footer from './footer.jsx';
+import {About} from './About.jsx';
+import {Home} from './Home.jsx';
+import { StudentInfo } from './StudentInfo.jsx';
+import {DeleteProduct} from './DeleteProduct.jsx';
+import {AddItem} from './addItem.jsx';
+import {EditProduct} from './editProduct.jsx';
+
 
 export const CartContext = createContext([])
 
@@ -25,7 +29,10 @@ function App() {
           <Route path="/cart" element={<CheckoutForm />} />
           < Route path="/products" element={<ProductPage/>}/>
           <Route path="/productDetails/:productId" element={<ProductDetails />} /> 
+          <Route path="/productEdit/:productId" element={<EditProduct />} /> 
         <Route path="/studentInfo" element={<StudentInfo />} />
+        <Route path="/deleteProducts" element={<DeleteProduct />} />
+        <Route path="/addItem" element={<AddItem />} />
       </Routes>
       <legend></legend>
       <Footer/>

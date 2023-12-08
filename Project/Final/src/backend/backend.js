@@ -17,50 +17,126 @@ const client = new MongoClient(url);
 const db = client.db(dbName);
 
 app.get("/AmeroBakery", async (req, res) => {
-    await client.connect();
-    console.log("Node connected successfully to GET MongoDB");
-    const query = {};
-    const results = await db
+  await client.connect();
+  console.log("Node connected successfully to GET MongoDB");
+  const query = {};
+  const results = await db
     .collection("cookies")
     .find(query)
     .limit(100)
     .toArray();
-    console.log(results);
-    res.status(200);
-    res.send(results);
-    });
+  console.log(results);
+  res.status(200);
+  res.send(results);
+});
 
-    app.get("/AmeroBakery/products/:productId", async (req, res) => {
+app.get("/AmeroBakery/products/:productId", async (req, res) => {
+  await client.connect();
+  console.log("Node connected successfully to GET MongoDB");
+  const { productId } = req.params;
+  console.log("Product ID:", productId);
+  try {
+    // Query the database to get the product with the specified productId
+    const query = { id: parseInt(productId, 20) };
+    const product = await db.collection("cookies").findOne(query);
 
-      await client.connect();
-      console.log("Node connected successfully to GET MongoDB");
-      const { productId } = req.params;
-      console.log('Product ID:', productId);
-      try {
-        // Query the database to get the product with the specified productId
-        const query = { id: parseInt(productId, 20) };
-        const product = await db.collection("cookies").findOne(query);
+    console.log("Product:", product);
 
-        console.log('Product:', product);
+    if (!product) {
+      // If product is not found, send a 404 response
+      res.status(404).json({ error: "Product not found" });
+    } else {
+      // If product is found, send the product data
+      res.json(product);
+    }
+  } catch (error) {
+    // Handle other errors
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
-        if (!product) {
-          // If product is not found, send a 404 response
-          res.status(404).json({ error: 'Product not found' });
-        } else {
-          // If product is found, send the product data
-          res.json(product);
-        }
-      } catch (error) {
-        // Handle other errors
-        res.status(500).json({ error: 'Internal Server Error' });
-      }
-  });
+// Route for creating the post
+app.post("/AmeroBakery/post", async (req, res) => {
+  await client.connect();
+  const keys = Object.keys(req.body);
+  const values = Object.values(req.body);
+  const id = values[0];
+  const type = values[1];
+  const image = values[2];
+  const title = values[3];
+  const text = values[4];
+  const category = values[5];
+  const price = values[6];
+  console.log(id, title, price, category, text, image, type);
+  const newDocument = {
+    id: id,
+    type: type,
+    image: image,
+    title: title,
+    text: text,
+    category: category,
+    price: price,
+  };
+  const results = await db.collection("cookies").insertOne(newDocument);
+  res.status(200);
+  res.send(results);
+});
 
+// Route to delete a post
+app.delete("/AmeroBakery/delete", async (req, res) => {
+  await client.connect();
+  // const keys = Object.keys(req.body);
+  const values = Object.values(req.body);
+  const id = values[0]; // id
+  console.log("Product to delete :", id);
+  const query = { id: id };
+  const results = await db.collection("cookies").deleteOne(query);
+  res.status(200);
+  res.send(results);
+});
 
+// Route for update a post
+app.put("/AmeroBakery/updateProduct/:productId", async (req, res) => {
+  await client.connect();
+  const { productId } = req.params;
+  console.log(productId);
+  const { type, image, title, text, category, price } = req.body;
+  try {
+    // Query the database to get the product with the specified productId
+    const query = { id: parseInt(productId, 20) };
+    const product = await db.collection("cookies").findOne(query);
+
+    console.log(product);
+
+    if (!product) {
+      // If product is not found, send a 404 response
+      return res.status(404).json({ error: "Product not found" });
+    }
+
+    const update = {
+      $set: {
+        type,
+        image,
+        title,
+        text,
+        category,
+        price,
+      },
+    };
+    console.log("Product:", product);
+    const results = await db.collection("cookies").updateOne(query, update);
+
+    // If the update is successful, send the updated product data
+    res.json({ success: true, updatedProduct: { ...product, ...update.$set } });
+  } catch (error) {
+    // Handle other errors
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  } finally {
+    await client.close(); // Close the MongoDB connection
+  }
+});
 
 app.listen(port, () => {
   console.log("App listening at http://%s:%s", host, port);
 });
-
-
-    

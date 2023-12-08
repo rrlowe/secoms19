@@ -36,3 +36,43 @@
     transform: rotate(360deg);
   }
 }
+
+.newProductContent {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+form .item{
+  width: 48vw;
+}
+
+label {
+  margin-bottom: 5px;
+  margin-right: 10px;
+  float: left;
+}
+
+.newProductContent input {
+  margin-bottom: 10px;
+  padding: 5px;
+  float: right;
+} 
+
+.newProductContent button {
+  margin-top: 10px;
+  background-color: pink;
+  padding: 10px;
+  border-radius: 30px;
+  margin-bottom: 40px;
+  width: 200px;
+}
+
