@@ -61,85 +61,86 @@ function Put() {
         <form onSubmit={handleOnSubmit}>
           <label>
             Product ID:
-            <input
+          </label>
+          <input
               type="number"
               placeholder="Enter Product ID"
               name="id"
               value={editedProduct.id}
               onChange={handleIdChange}
             />
-          </label>
           <br />
           <br />
           <label>
             Title:
-            <input
+          </label>
+          <input
               type="text"
               placeholder="Enter Title"
               name="title"
               value={editedProduct.title}
               onChange={handleChange}
             />
-          </label>
           <br />
           <label>
             Price:
-            <input
+          </label>
+          <input
               type="number"
               placeholder="Enter Price"
               name="price"
               value={editedProduct.price}
               onChange={handleChange}
             />
-          </label>
           <br />
           <label>
             Description:
-            <input
+          </label>
+          <input
               type="text"
               placeholder="Enter Description"
               name="description"
               value={editedProduct.description}
               onChange={handleChange}
             />
-          </label>
           <br />
           <label>
             Category:
-            <input
+          </label>
+          <input
               type="text"
               placeholder="Enter Category"
               name="category"
               value={editedProduct.category}
               onChange={handleChange}
             />
-          </label>
           <br />
           <label>
-            Image:
-            <input
+          Image:
+          </label>
+          <input
               type="text"
               placeholder="Enter Image URL"
               name="image"
               value={editedProduct.image}
               onChange={handleChange}
             />
-          </label>
           <br />
           <label>
             Rating Count:
-            <input
+          </label>
+          <input
               type="number"
               placeholder="Enter Rating Count"
               name="ratingCount"
               value={editedProduct.rating.count}
               onChange={handleChange}
             />
-          </label>
           <br />
           <label>
             Rating Rate:
-            <input
+          </label>
+          <input
               type="number"
               step="0.1"
               placeholder="Enter Rating Rate"
@@ -147,7 +148,6 @@ function Put() {
               value={editedProduct.rating.rate}
               onChange={handleChange}
             />
-          </label>
           <br />
           <button type="submit">Update</button>
         </form>

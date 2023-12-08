@@ -114,9 +114,8 @@ app.put("/updateProduct/:productId", async (req, res) => {
     price,
     category,
     description,
-    imageUrl,
-    rating,
-    people,
+    image,
+    rating: {rate,count}
   } = req.body;
   try {
     // Query the database to get the product with the specified productId
@@ -136,8 +135,8 @@ app.put("/updateProduct/:productId", async (req, res) => {
         price,
         category,
         description,
-        imageUrl,
-        rating: {"rate":rating, "count":people}
+        image,
+        rating: {"rate":rate, "count":count}
       },
     };
     console.log('Product:', product);

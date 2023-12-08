@@ -8,7 +8,7 @@ function Post() {
     price: 0.0,
     description: "",
     category: "",
-    image: "http://127.0.0.1:4000/images/",
+    imageUrl: "http://127.0.0.1:4000/images/",
     rating: {count:0, rate:0.0}
   });
 
@@ -57,6 +57,9 @@ function Post() {
         <div className="newProductContent">
           <h3 class="Heading">Add a new product :</h3>
           <form action="">
+          <label>
+            Product ID:
+            </label>
             <input
               type="number"
               placeholder="id?"
@@ -64,6 +67,10 @@ function Post() {
               value={addNewProduct.id}
               onChange={handleChange}
             />
+            <br></br>
+            <label>
+            Product Title:
+            </label>
             <input
               type="text"
               placeholder="title?"
@@ -71,6 +78,10 @@ function Post() {
               value={addNewProduct.title}
               onChange={handleChange}
             />
+            <br></br>
+            <label>
+            Product Price:
+            </label>
             <input
               type="number"
               placeholder="price?"
@@ -78,6 +89,10 @@ function Post() {
               value={addNewProduct.price}
               onChange={handleChange}
             />
+            <br></br>
+            <label>
+            Product Description:
+            </label>
             <input
               type="text"
               placeholder="description?"
@@ -85,6 +100,10 @@ function Post() {
               value={addNewProduct.description}
               onChange={handleChange}
             />
+            <br></br>
+            <label>
+            Product Category:
+            </label>
             <input
               type="text"
               placeholder="category?"
@@ -92,13 +111,21 @@ function Post() {
               value={addNewProduct.category}
               onChange={handleChange}
             />
+            <br></br>
+            <label>
+            Product Image:
+            </label>
             <input
               type="text"
               placeholder="image?"
               name="image"
-              value={addNewProduct.image}
+              value={addNewProduct.imageUrl}
               onChange={handleChange}
             />
+            <br></br>
+            <label>
+            Product Rating:
+            </label>
             <input
               type="number"
               placeholder="rate?"

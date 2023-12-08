@@ -6,6 +6,7 @@ import Delete from './deletProduct.jsx';
 import GetAll from './allProduct.jsx'
 import Post from './postProduct.jsx'
 import Put from './putProduct.jsx'
+import StudentInfo from './studentInfo.jsx';
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 
@@ -33,6 +34,9 @@ root.render(
             <li>
               <Link to="/put">Edit a Product</Link>
             </li>
+            <li>
+              <Link to="/studentInfo">Student Info</Link>
+            </li>
           </ul>
         </nav>
       </div>
@@ -43,6 +47,7 @@ root.render(
         <Route path="/delete" element={<Delete />} />
         <Route path="/post" element={<Post />} />
         <Route path="/put" element={<Put />} />
+        <Route path="/studentInfo" element={<StudentInfo />} />
       </Routes>
     </Router>
 );

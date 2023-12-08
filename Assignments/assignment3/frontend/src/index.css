@@ -58,6 +58,7 @@ code {
 .title{
   padding-left: 30px;
   padding-right: 30px;
+  text-align: center;
   font-size: 30px;
 }
 
@@ -70,7 +71,7 @@ code {
 button {
   width: 10vw;
   margin: 10px;
-  height: 5vw;
+  height: 40px;
   background-color: bisque;
   font-weight: bolder;
 }
@@ -82,16 +83,27 @@ button {
 
 form{
   margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+form label{
+  float: left;
+  font-size: 20px;
+  margin-left: 2vw;
 }
 
 form input{
-  margin: 10px;
-  width: 80vw;
-  height: 5vw;
-  font-size: 3vw;
+  height: 30px;
+  width: 75vw;
+  font-size: 25px;
+  margin-left: 20px;
+  float: left;
 }
+
 form button{
   width: 80vw;
+  height: 50px;
 }
 
 /* Reset default list styles */
@@ -124,4 +136,21 @@ nav li {
   display: inline-block;
   margin-bottom: 5px;
   margin-right: 20px; /* Adjust the margin for spacing */
+}
+
+h2{
+  text-align: center;
+}
+
+.aboutHeading{
+  text-align: center;
+  font-size: 25px;
+  color: rgb(113, 79, 37);
+  font-weight: 700;
+}
+
+.aboutBody{
+  text-align: center;
+  border: 3px solid rgb(113, 79, 37);
+  background-color: bisque;
 }

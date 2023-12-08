@@ -2,12 +2,10 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [viewer1, setViewer1] = useState(false);
-  const [viewer4, setViewer4] = useState(false);
+  const [viewer4, setViewer4] = useState(true);
   const [checked4, setChecked4] = useState(false);
   const [index, setIndex] = useState(0);
   const [product, setProduct] = useState([]);
-
-  
 
 
 
@@ -73,19 +71,22 @@ function App() {
         <div>
           <h3 class="Heading">Delete one product:</h3>
           <div class="buttonContainer">
-          <input
+          {/* <input
             type="checkbox"
             id="acceptdelete"
             name="acceptdelete"
             checked={checked4}
             onChange={(e) => setChecked4(!checked4)}
-          />
+          /> */}
           <button onClick={() => getOneByOneProductPrev()}>Prev</button>
-          <button onClick={() => getOneByOneProductNext()}>Next</button>
+          <button onClick={() => {getOneByOneProductNext(); setChecked4(true)}}>Next</button>
           <button onClick={() => deleteOneProduct(product[index].id)}>
             Delete
           </button>
           </div>
+          {!checked4 && (
+            <h2>click next to view products</h2>
+                      )}
           {checked4 && (
             <div key={product[index].id}>
                 <h1 class="title">Title: {product[index].title} <br /></h1>
@@ -95,7 +96,7 @@ function App() {
                 Id:{product[index].id} <br />
                 Category: {product[index].category} <br />
                 Price: {product[index].price} <br />
-                Rating: {product[index].rating}</p>
+                Rating: {product[index].rating.rate}</p>
                 </div>
             </div>
           )}
