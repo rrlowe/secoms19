@@ -84,6 +84,7 @@ export function CheckoutForm() {
     if (val) {
       setcheckoutActive((current) => !current);
       setorderSumActive((current) => !current);
+      setCartContent([]);
     }
     return val;
   };
@@ -330,7 +331,6 @@ export function CheckoutForm() {
                   onClick={(event) => {
                     event.preventDefault();
                     validate();
-                    setCartContent([])
                   }}
                 >
                   {" "}
