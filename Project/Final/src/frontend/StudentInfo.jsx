@@ -27,7 +27,13 @@ export function StudentInfo() {
       </div>
 
       <div style={{ width: '100%', height: '20vw', backgroundColor: 'rgba(255, 192, 203, 0.3)', position: 'relative' }}>
-        <img id="bear" src="../../images/characters/chefBearNoBG.png" alt="bear dressed as chef" style={{ height: '20vw', width: 'auto', position: 'absolute' }} />
+        <img id="bear" src="../../images/characters/chefBearNoBG.png" alt="bear dressed as chef" style={{ height: '19vw', width: 'auto' }} />
+        <img id="bear" src="../../images/characters/greenShirtBearNoBG.png" alt="bear dressed as chef" style={{ height: '19vw', width: 'auto' }} />
+        <img id="bear" src="../../images/characters/coffeeBearNoBG.png" alt="bear dressed as chef" style={{ height: '19vw', width: 'auto' }} />
+        <img id="bear" src="../../images/characters/chefBearNoBG.png" alt="bear dressed as chef" style={{ height: '19vw', width: 'auto' }} />
+        <img id="bear" src="../../images/characters/greenShirtBearNoBG.png" alt="bear dressed as chef" style={{ height: '19vw', width: 'auto' }} />
+        <img id="bear" src="../../images/characters/coffeeBearNoBG.png" alt="bear dressed as chef" style={{ height: '19vw', width: 'auto' }} />
+
       </div>
     </main>
   );

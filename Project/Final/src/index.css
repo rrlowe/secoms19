@@ -129,7 +129,7 @@ body {
   padding: 8px;
   border-radius: 20px;
   background-color: pink;
-  width: auto;
+  width: 20vw;
   color: black;
   border: 2px solid black;
   font-size: larger;
@@ -183,11 +183,12 @@ body {
 .card .btn, .order-card .btn {
   background-color: pink;
   color: black;
-  width: 40vw;
+  width: 20vw;
   border: solid 2px black;
-  margin-left: 30vw;
+  border-radius: 30px;
+  margin-left: 50vw;
   margin-top: 50px;
-  margin-bottom: 35vw;
+  margin-bottom: 5vh;
 }
 
 
@@ -243,6 +244,11 @@ body {
   color: black;
 }
 
+.newProductContent img{
+  width: 350px;
+  height: 300px;
+  border: 1px solid black;
+}
 
 
 code {

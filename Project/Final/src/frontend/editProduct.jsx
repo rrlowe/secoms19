@@ -155,6 +155,7 @@ export function EditProduct(){
           onChange={handleChange}
         /></div>
         <br></br>
+        <img src={'../../'+product.image}></img>
         <button type="submit" onClick={handleOnSubmit}>
           submit
         </button>

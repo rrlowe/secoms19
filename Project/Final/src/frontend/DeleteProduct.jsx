@@ -51,9 +51,9 @@ export function DeleteProduct() {
 
   const listItems = displayItems.map((el) => (
     <article key={el.id} className="card">
-      <img src={'../'+el.image} alt={el.title} />
+      <img src={'../'+el.image} alt={el.lable} />
       <div className="card-content">
-        <h1>{el.title}</h1>
+        <h1>{el.lable}</h1>
         <p>${el.price}</p>
         <br />
         <button

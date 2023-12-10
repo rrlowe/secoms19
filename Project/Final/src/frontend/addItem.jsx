@@ -146,6 +146,7 @@ export function AddItem() {
               onChange={handleChange}
             /></div>
             <br></br>
+            <img src={'../../'+addNewProduct.image} alt=" Not An Image"></img>
             <button type="submit" onClick={handleOnSubmit}>
               submit
             </button>
