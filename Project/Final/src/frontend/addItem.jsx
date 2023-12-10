@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {NavBar, AdminNavBar} from './nav';
 
 export function AddItem() {
   // new Product
@@ -54,6 +55,7 @@ export function AddItem() {
 
   return (
     <div>
+      <AdminNavBar></AdminNavBar>
         <div className="newProductContent">
           <h3 class="Heading">Add a new product :</h3>
           <form action="">

@@ -1,13 +1,15 @@
 import React from "react";
 import './studentInfo.css';
+import {NavBar, AdminNavBar} from './nav.jsx';
 
 export function StudentInfo() {
   return (
     <main style={{ color: '#090503ff' }}>
+      <AdminNavBar></AdminNavBar>
       <div className="aboutHeading">
         <h1 className="title">COM S 319: Construction of User Interfaces</h1>
         <p>Professor Abraham Netzahualcoy Aldaco Gastelum</p>
-        <p>November 28th, 2023</p>
+        <p>December 13th, 2023</p>
       </div>
 
       <div className="aboutBody">
@@ -25,7 +27,7 @@ export function StudentInfo() {
       </div>
 
       <div style={{ width: '100%', height: '20vw', backgroundColor: 'rgba(255, 192, 203, 0.3)', position: 'relative' }}>
-        <img id="bear" src="./images/characters/chefBearNoBG.png" alt="bear dressed as chef" style={{ height: '20vw', width: 'auto', position: 'absolute' }} />
+        <img id="bear" src="../../images/characters/chefBearNoBG.png" alt="bear dressed as chef" style={{ height: '20vw', width: 'auto', position: 'absolute' }} />
       </div>
     </main>
   );

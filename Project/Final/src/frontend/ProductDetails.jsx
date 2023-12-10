@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { NavBar } from './nav';
 
 export function ProductDetails() {
   const { productId } = useParams();
@@ -28,6 +29,8 @@ export function ProductDetails() {
   }
 
   return (
+    <div>
+    <NavBar></NavBar>
     <div className="product-details" key={productId}>
       <div className="row main align-items-center">
           <img src={"."+product.image} alt={product.title} />
@@ -36,6 +39,7 @@ export function ProductDetails() {
           <div className="info">{product.text}</div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

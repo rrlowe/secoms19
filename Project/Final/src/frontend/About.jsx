@@ -1,4 +1,5 @@
 import React from "react";
+import NavBar from "./nav";
 
 export function About() {
     const containerStyle = {
@@ -31,6 +32,7 @@ export function About() {
   
     return (
       <div>
+          <NavBar></NavBar>
         <div style={containerStyle}>
           <img style={imageStyle} width="100%" src={process.env.PUBLIC_URL + 'images/characters/messageBearNoBG.png'} alt="Amero Bakery" />
         </div>

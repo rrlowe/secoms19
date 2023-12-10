@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NavBar from "./nav";
 
 export function Home() {
 
@@ -53,6 +54,7 @@ export function Home() {
 
     return (
       <div>
+        <NavBar></NavBar>
         <img
           style={{
             display: 'block',

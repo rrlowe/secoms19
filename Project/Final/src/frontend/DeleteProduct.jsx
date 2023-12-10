@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from 'react-router-dom';
+import {NavBar, AdminNavBar} from './nav';
 
 export function DeleteProduct() {
   const [items, setItems] = useState([]);
@@ -45,15 +46,15 @@ export function DeleteProduct() {
       });
   }
   const handleProductEdit = (productId) => {
-    navigate(`/productEdit/${productId}`);
+    navigate(`/admin/productEdit/${productId}`);
   };
 
   const listItems = displayItems.map((el) => (
     <article key={el.id} className="card">
-      <img src={el.image} alt={el.title} />
+      <img src={'../'+el.image} alt={el.title} />
       <div className="card-content">
         <h1>{el.title}</h1>
-        <p>${el.price}.00</p>
+        <p>${el.price}</p>
         <br />
         <button
           className="view-product"
@@ -73,6 +74,7 @@ export function DeleteProduct() {
 
   return (
     <div>
+      <AdminNavBar></AdminNavBar>
       <div className="cards">
         {listItems}
       </div>

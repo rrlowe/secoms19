@@ -3,7 +3,7 @@ import "bootstrap";
 import React, { useState, useEffect, useContext } from "react";
 import {CartContext} from "./App.js"
 import { Link, useNavigate } from 'react-router-dom';
-
+import NavBar from "./nav.jsx";
 
 
 export function ProductPage() {
@@ -119,6 +119,7 @@ export function ProductPage() {
 
   return (
     <div>
+      <NavBar></NavBar>
       <div class="header">
         <h1 style={headingStyle}>Order Now</h1>
       </div>

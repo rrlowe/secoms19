@@ -768,6 +768,7 @@
 import { React, useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./App.js";
+import NavBar from "./nav.jsx";
 
 export function CheckoutForm() {
   const { cartContent, setCartContent } = useContext(CartContext);
@@ -803,7 +804,7 @@ export function CheckoutForm() {
   const total = () => {
     let totalVal = 0;
     for (let i = 0; i < cart.length; i++) {
-      totalVal += cart[i].price;
+      totalVal += parseInt(cart[i].price);
     }
     setCartTotal(totalVal);
   };
@@ -1148,6 +1149,7 @@ export function CheckoutForm() {
   };
   return (
     <div>
+      <NavBar></NavBar>
       <div class={`checkout ${checkoutActive && cartContent.length > 0 ? "" : "collapse"}`}>
         <CheckoutForm />
       </div>

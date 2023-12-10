@@ -22,17 +22,16 @@ function App() {
   return (    
     <Router>
     <CartContext.Provider value={{cartContent, setCartContent}}>
-    <NavBar></NavBar>
       <Routes>
         <Route path="/" element={<Home />} /> 
         <Route path="/about" element={<About />} />
           <Route path="/cart" element={<CheckoutForm />} />
           < Route path="/products" element={<ProductPage/>}/>
           <Route path="/productDetails/:productId" element={<ProductDetails />} /> 
-          <Route path="/productEdit/:productId" element={<EditProduct />} /> 
-        <Route path="/studentInfo" element={<StudentInfo />} />
-        <Route path="/deleteProducts" element={<DeleteProduct />} />
-        <Route path="/addItem" element={<AddItem />} />
+          <Route path="/admin/productEdit/:productId" element={<EditProduct />} /> 
+        <Route path="/admin" element={<StudentInfo />} />
+        <Route path="/admin/deleteProducts" element={<DeleteProduct />} />
+        <Route path="/admin/addItem" element={<AddItem />} />
       </Routes>
       <legend></legend>
       <Footer/>

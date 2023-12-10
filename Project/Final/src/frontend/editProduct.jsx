@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import {NavBar, AdminNavBar} from './nav';
 
 export function EditProduct(){
     const { productId } = useParams();
@@ -23,13 +24,13 @@ export function EditProduct(){
         if (evt.target.name === "id") {
             setProduct({ ...product, id: value });
         } else if (evt.target.name === "title") {
-            setProduct({ ...product, title: value });
+            setProduct({ ...product, label: value });
         } else if (evt.target.name === "type") {
             setProduct({ ...product, type: value });
         } else if (evt.target.name === "price") {
             setProduct({ ...product, price: value });
         } else if (evt.target.name === "category") {
-            setProduct({ ...product, category: value });
+            setProduct({ ...product, type: value });
         } else if (evt.target.name === "image") {
             setProduct({ ...product, image: value });
         } else if (evt.target.name === "description") {
@@ -63,6 +64,7 @@ export function EditProduct(){
 
   return (
     <div>
+      <AdminNavBar></AdminNavBar>
     <div className="newProductContent">
       <h3 class="Heading">Edit the product :</h3>
       <form action="">
@@ -87,7 +89,7 @@ export function EditProduct(){
           type="text"
           placeholder="title"
           name="title"
-          value={product.title}
+          value={product.lable}
           onChange={handleChange}
         /></div>
         <br></br>
@@ -137,7 +139,7 @@ export function EditProduct(){
           type="text"
           placeholder="category"
           name="category"
-          value={product.category}
+          value={product.type}
           onChange={handleChange}
         /></div>
         <br></br>
