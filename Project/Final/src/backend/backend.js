@@ -95,6 +95,44 @@ app.delete("/AmeroBakery/delete", async (req, res) => {
   res.send(results);
 });
 
+//Route for the contact us form
+app.post("/submitForm", async (req, res) => {
+  try {
+    const { name, email, phone, message } = req.body;
+
+    const result = await db.collection("formSubmissions").insertOne({
+      name,
+      email,
+      phone,
+      message,
+    });
+
+    res.status(200).json({ success: true, insertedId: result.insertedId });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, error: "Server error" });
+  }
+});
+
+//Route to store orders into database
+app.post("/submitOrder", async (req, res) => {
+  try {
+    const { items, total, customerInfo } = req.body;
+
+    const result = await db.collection("orders").insertOne({
+      items,
+      total,
+      customerInfo,
+      timestamp: new Date(),
+    });
+
+    res.status(200).json({ success: true, insertedId: result.insertedId });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, error: "Server error" });
+  }
+});
+
 // Route for update a post
 app.put("/AmeroBakery/updateProduct/:productId", async (req, res) => {
   await client.connect();

@@ -26,6 +26,30 @@ export function Home() {
         });
       };
 
+      const submitForm = async () => {
+        try {
+          const response = await fetch("http://localhost:8081/submitForm", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          });
+      
+          const result = await response.json();
+      
+          if (result.success) {
+            // Form submitted successfully, you can update the UI or redirect the user.
+            clearInput();
+            console.log("Form submitted successfully! Inserted ID:", result.insertedId);
+          } else {
+            console.error("Form submission failed:", result.error);
+          }
+        } catch (error) {
+          console.error("Error submitting form:", error);
+        }
+      };
+
 
     return (
       <div>
@@ -166,7 +190,7 @@ export function Home() {
                 onChange={handleInputChange}
               ></textarea>
               <br />
-              <button className="submit" type="button" onClick={clearInput}>
+              <button className="submit" type="button" onClick={submitForm}>
                 Submit
               </button>
             </form>
