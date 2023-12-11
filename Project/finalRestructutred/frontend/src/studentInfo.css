@@ -1,0 +1,31 @@
+.aboutHeading{
+    text-align: center;
+    color: black;
+    margin: 10px;
+    border: black solid 3px;
+    padding: 40px;
+  }
+  .dev{
+    padding-left: 10vw;
+  }
+
+  .aboutBody{
+    background-color:  white;
+    color:black;
+    margin: 10px;
+    padding: 30px;
+    border: black solid 3px;
+  }
+
+  .student{
+    padding-left: 20vw;
+    text-align: left;
+  }
+
+  .nav-link{
+    padding-left: 30px;
+    border-radius: 20px;
+  }
+  .nav-link:hover{
+    background-color: #ffffff;
+  }

@@ -1,0 +1,302 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.cards .card {
+  margin: 20px;
+  border: 15px rgb(147, 119, 79);
+  border-style: double;
+  display: grid;
+  grid-template-rows: max-content 250px 1fr;
+  justify-items: center;
+  height: fit-content;
+}
+
+.cards .card .card-content {
+  width: 250px;
+}
+
+.cards .card .card-content p {
+  float: left;
+  margin-left: 20px;
+}
+
+.cards .card .card-content h1 {
+  font-size: 20px;
+}
+
+.cards .card .view-product {
+  display: block;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+  border-radius: 20px;
+  color: rgb(147, 119, 79);
+  font-weight: 600;
+  background-color: white;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+  border: 3px solid rgb(147, 119, 79);
+}
+
+.cards .card .add, .sub{
+  background-color: white;
+  font-size: 20px;
+  border: 3px solid rgb(147, 119, 79);
+  color: rgb(147, 119, 79);
+  border-radius: 20px;
+  width: 40px;
+}
+.cards .card .add{
+  margin-left: 5px;
+}
+.add-sub{
+  margin-top: 20px;
+  margin-left: 22%;
+}
+
+.cards .card .view-product:hover, .cards .card .add:hover, .cards .card .sub:hover{
+  color: white;
+  background-color: rgb(147, 119, 79);
+  border: 3px solid rgb(147, 119, 79);
+}
+
+.card img {
+  margin-top: 20px;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.orderSum {
+  margin-top: 30px;
+}
+
+.orderSum .cart-list {
+  display: grid;
+  width: 90vw;
+}
+
+.orderSum .cart-list .notlast {
+  float: left;
+  margin-left: 15vw;
+}
+
+.orderSum .cart-list .last {
+  float: right;
+  margin-right: 5vw;
+}
+
+.orderSum .cart-list article .card-content .info {
+  float: left;
+  margin-left: 13vw;
+  font-size: 1.5vw;
+}
+
+.orderSum .cart-list article .card-content .price {
+  float: right;
+  margin-right: 5vw;
+}
+
+.orderSum .cart-list article img {
+  width: 50px;
+  height: auto;
+  float: left;
+  margin-left: 15vw;
+}
+
+.orderSum .cart-list .order-price {
+  margin-left: auto;
+  margin-right: 5vw;
+}
+
+.orderSum .btn-return {
+  float: left;
+  margin-left: 12vw;
+  padding: 8px;
+  border-radius: 20px;
+  background-color: pink;
+  width: 20vw;
+  color: black;
+  border: 2px solid black;
+  font-size: larger;
+  text-decoration: none;
+}
+
+.orderSum button {
+  background-color: pink;
+  width: 20vw;
+  padding: 5px;
+  border-radius: 20px;
+  font-size: larger;
+  margin-bottom: 30px;
+  float: right;
+}
+
+.orderSum .row {
+  width: 70vw;
+  float: right;
+  float: left;
+}
+
+.orderSum h1{
+  text-align: center;
+  padding-top:10vh;
+  padding-bottom: 52vh;
+}
+
+.search {
+  color: black;
+  background-color: pink;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+.search label {
+  background-color: pink;
+  float: left;
+  margin-left: 20px;
+}
+
+.header {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border: 10px double rgb(147, 119, 79);
+  ;
+}
+
+.card .btn, .order-card .btn {
+  background-color: pink;
+  color: black;
+  width: 20vw;
+  border: solid 2px black;
+  border-radius: 30px;
+  margin-left: 50vw;
+  margin-top: 50px;
+  margin-bottom: 5vh;
+}
+
+
+.card .btn:hover, .order-card .btn:hover {
+  background-color: white;
+  color: black;
+  width: 40vw;
+  border: solid 2px black;
+}
+
+.card-title {
+  margin-top: 30px;
+}
+
+.row .img-fluid{
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.order-card{
+  width: 70vw;
+  margin-left: 15vw;
+}
+.order-card .order-price{
+  float: right;
+  margin-right: 5vw;
+
+}
+.order-card .order-data{
+  margin-left: 30%;
+  margin-top: 30px;
+}
+
+.product-details img{
+  width: 50vw;
+  height: auto;
+  margin-left: 30px;
+}
+
+.product-details{
+  width: 95vw;
+  margin-top: 30px;
+  margin-bottom:41vmax;
+
+}
+
+.product-details .title{
+  font-size: 25px;
+  color: black;
+}
+.product-details .info{
+  font-size: 15px;
+  color: black;
+}
+
+.newProductContent img{
+  width: 350px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+nav {
+  background-color: pink;
+}
+
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+  box-shadow: none;
+  color: white;
+  -webkit-box-shadow: none;
+  -webkit-user-select: none;
+  transition: none;
+}
+
+a {
+  color: black;
+  border-radius: 20px;
+}
+
+a:hover {
+  color: black;
+  background-color: whitesmoke;
+  text-decoration: none;
+}
+
+.navbar p {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  padding: 20px;
+  padding-left: 30px;
+  padding-bottom: 70px;
+  background-color: pink;
+  position: relative;
+  width: 100%;
+}
+footer a{
+  float: left;
+}
+footer a:hover{
+  background-color: pink;
+}
